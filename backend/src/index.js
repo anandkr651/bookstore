@@ -8,6 +8,7 @@ app.use(
     cors({
         origin: process.env.CORS_ORIGN,
         credentials: true,
+        // origin: "https://your-frontend-on-vercel.com"
     })
 );
 app.use(express.json())
