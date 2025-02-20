@@ -1,6 +1,5 @@
 function Card({ item, key }) {
   // console.log(item);
-
   return (
     <div>
       <div className="card bg-base-100 w-80 mb-10 hover:scale-105 duration-300 mx-auto">

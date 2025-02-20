@@ -16,20 +16,20 @@ function Login() {
     }
     await axios.post("http://localhost:4000/user/login",userInfo)
     .then((res)=>{
-      console.log(res.data);
+      // console.log(res.data);
       if(res.data){
         toast.success('login successfully!');
        setTimeout(()=>{
         document.getElementById("my_modal_3").close()
         window.location.reload()
         localStorage.setItem("Users",JSON.stringify(res.data.user))
-       },3000)
+       },1000)
       }
     }).catch((err)=>{
       if(err.response){
         console.log(err);
         toast.error("Error: " + err.response.data.message)
-        setTimeout(()=>{},3000)
+        setTimeout(()=>{},1000)
       } 
     })
   };

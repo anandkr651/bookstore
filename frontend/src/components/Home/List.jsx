@@ -50,14 +50,12 @@ function List() {
       // console.log(res.data);
       setBook(res.data)
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   }
   getbook()
   },[])
   
-
-
   const filterbook = book.filter((data) => data.category === "free");
   // console.log(filterbook);
 

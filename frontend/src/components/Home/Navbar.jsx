@@ -2,12 +2,13 @@ import { useEffect, useState } from "react";
 import Login from "../Login/Login.jsx";
 import { useAuth } from "../../context/AuthProvider";
 import Logout from "../Logout/Logout.jsx";
+import { NavLink } from "react-router-dom";
 
 function Navbar() {
   const [scrollPage, setScrollpage] = useState(false);
   const [theme,setTheme]=useState(localStorage.getItem("theme")? localStorage.getItem("theme"):"light")
   const [authUser , setAuthUser] = useAuth()
-  console.log(authUser);
+  // console.log(authUser);
   
   const element = document.documentElement
   // console.log(element);
@@ -42,16 +43,16 @@ function Navbar() {
   const navmenu = (
     <ul className="menu menu-horizontal px-1 text-xl font-medium">
       <li>
-        <a href="/">Home</a>
+        <NavLink to="/" className={({isActive}) =>`${isActive ?"text-orange-500" :"text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700`}>Home</NavLink>
       </li>
       <li>
-        <a href="/course">Course</a>
+        <NavLink to="/course" className={({isActive}) =>`${isActive ?"text-orange-500" :"text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700`}>Course</NavLink>
       </li>
       <li>
-        <a href="/contact">Contact</a>
+        <NavLink to="/Contact" className={({isActive}) =>`${isActive ?"text-orange-500" :"text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700`}>Contact</NavLink>
       </li>
       <li>
-        <a href="/about">About</a>
+        <NavLink to="/about" className={({isActive}) =>`${isActive ?"text-orange-500" :"text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700`}>About</NavLink>
       </li>
     </ul>
   );
@@ -148,7 +149,6 @@ function Navbar() {
           <Login/>
           </div>
           }
-
         </div>
       </div>
     </div>
